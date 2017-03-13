@@ -3,20 +3,26 @@
  */
 public class Note {
 
-    private String notePurpose, noteTips;
+    GetInputs in = new GetInputs();
+
+    private String purpose, tips;
+
+    public Note() {
+        this.purpose = in.getStringInputFreetext("What was the purpose of this workout?");
+        this.tips = in.getStringInputFreetext("What is the tips from this workout?");
+        in.closeScanner();
+    }
 
     public Note(String purpose, String tips){
-
-        notePurpose = purpose;
-        noteTips = tips;
-
+        this.purpose = purpose;
+        this.tips = tips;
     }
 
     public String getPurpose() {
-        return notePurpose;
+        return purpose;
     }
 
     public String getTips() {
-        return noteTips;
+        return tips;
     }
 }

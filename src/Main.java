@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 /**
  * Created by Erlend on 13.03.2017.
@@ -13,7 +12,7 @@ public class Main {
     }
 
     public void init() {
-        this.in = new GetInputs();
+        //stuff
     }
 
     public void run() {
@@ -43,7 +42,17 @@ public class Main {
 
     //Inputs a workout to the database
     public void inputWorkout() {
-        System.out.println("Inputting workout");
+        String input;
+        Workout workout = new Workout();
+        input = in.getStringInputFreetext("Do you want to add a note?");
+        if (input.toLowerCase().equals("yes")||input.toLowerCase().equals("y")) {
+           workout.addNote();
+        }
+        int num = in.getIntInputFreetext("How many exercises did you do?");
+        for (int i = 0; i<num; i++) {
+            System.out.println("Inputting exercise number " + i+1);
+            workout.addResult();
+        }
     }
 
     //Gets the best workout in the last 7 days

@@ -26,8 +26,8 @@ public class Workout {
         this.performance = performance;
     }
 
-    public void addNote(String purpose, String tips) {
-        this.note = new Note(purpose, tips);
+    public void addNote() {
+        this.note = new Note();
     }
 
     public void addResult() {

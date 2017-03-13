@@ -22,25 +22,25 @@ public class WorkoutData {
 
     private void setTime(){
 
-        this.time = input.getStringInput("At what time did you do the workout? [dd-mm-yy]");
+        this.time = input.getStringInputFreetext("At what time did you do the workout? [dd-mm-yy]");
 
     }
 
     private void setHeartRate(){
 
-        this.heartRate = input.getIntInput("What was your average heart rate?");
+        this.heartRate = input.getIntInputFreetext("What was your average heart rate?");
 
     }
 
     private void setCoordLocation(){
 
-        this.lat_coord = input.getStringInput("Your latitude coordinates? [-90 to 90]");
-        this.long_coord = input.getStringInput("Yoyr longitude coordinates? [-180 to 180]");
+        this.lat_coord = input.getStringInputFreetext("Your latitude coordinates? [-90 to 90]");
+        this.long_coord = input.getStringInputFreetext("Your longitude coordinates? [-180 to 180]");
     }
 
     private void setMASL(){
 
-        this.masl = input.getIntInput("What was the average meeter above sea level?");
+        this.masl = input.getIntInputFreetext("What was the average meeter above sea level?");
 
     }
 
@@ -64,4 +64,11 @@ public class WorkoutData {
         return masl;
     }
 
+    @Override
+    public String toString() {
+        return ("Time: " + this.time
+                + '\n' + "Heart rate: " + Integer.toString(this.heartRate)
+                + '\n' + "Location: longitude " + this.long_coord + ", latitude " + this.lat_coord
+                + '\n' + "MASL: " + Integer.toString(this.masl));
+    }
 }

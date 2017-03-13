@@ -35,7 +35,7 @@ public class WorkoutData {
     private void setCoordLocation(){
 
         this.lat_coord = input.getStringInputFreetext("Your latitude coordinates? [-90 to 90]");
-        this.long_coord = input.getStringInputFreetext("Yoyr longitude coordinates? [-180 to 180]");
+        this.long_coord = input.getStringInputFreetext("Your longitude coordinates? [-180 to 180]");
     }
 
     private void setMASL(){
@@ -64,4 +64,11 @@ public class WorkoutData {
         return masl;
     }
 
+    @Override
+    public String toString() {
+        return ("Time: " + this.time
+                + '\n' + "Heart rate: " + Integer.toString(this.heartRate)
+                + '\n' + "Location: longitude " + this.long_coord + ", latitude " + this.lat_coord
+                + '\n' + "MASL: " + Integer.toString(this.masl));
+    }
 }

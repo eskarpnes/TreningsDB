@@ -1,5 +1,5 @@
 /**
- * Created by Erlend on 13.03.2017.
+ * Created by Thomas on 13.03.2017.
  */
 public class Note {
 
@@ -24,5 +24,11 @@ public class Note {
 
     public String getTips() {
         return tips;
+    }
+
+    @Override
+    public String toString() {
+        return ("Purpose: " + this.notePurpose
+                + '\n' + "Tips: " + this.noteTips);
     }
 }

@@ -8,9 +8,8 @@ public class Note {
     private String purpose, tips;
 
     public Note() {
-        this.purpose = in.getStringInputFreetext("What was the purpose of this workout?");
-        this.tips = in.getStringInputFreetext("What is the tips from this workout?");
-        in.closeScanner();
+        this.purpose = in.getStringInput("What was the purpose of this workout?");
+        this.tips = in.getStringInput("What is the tips from this workout?");
     }
 
     public Note(String purpose, String tips){
@@ -28,7 +27,7 @@ public class Note {
 
     @Override
     public String toString() {
-        return ("Purpose: " + this.notePurpose
-                + '\n' + "Tips: " + this.noteTips);
+        return ("Purpose: " + this.purpose
+                + '\n' + "Tips: " + this.tips);
     }
 }

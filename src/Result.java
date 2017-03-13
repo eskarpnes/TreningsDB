@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * Created by Thomas on 13.03.2017.
  */
@@ -40,7 +38,7 @@ public class Result {
 
     private void addWorkoutData() {
 
-        int value = input.getIntInputFreetext("Do you want do add workout data? 1 = YES, 2 = NO");
+        int value = input.getIntInput("Do you want do add workout data? 1 = YES, 2 = NO");
 
         if (value == 1){
 
@@ -53,21 +51,21 @@ public class Result {
 
         System.out.println("Where did you do your workout? 1 = inside, 2 = outside");
         System.out.println(">>> ");
-        int locInt = input.getIntInputFreetext("");
+        int locInt = input.getIntInput("");
 
         System.out.println("What kind of exercise you do? 1 = cardio, 2 = bodybuilding" );
         System.out.println(">>> ");
-        int typeInt = input.getIntInputFreetext("");
+        int typeInt = input.getIntInput("");
 
         if (locInt == 1) {
-            this.air_quality = input.getIntInputFreetext("How was the air quality? [1-10]");
-            this.spectators = input.getIntInputFreetext("How many spectators did you have?");
+            this.air_quality = input.getIntInput("How was the air quality? [1-10]");
+            this.spectators = input.getIntInput("How many spectators did you have?");
             this.exLocation = "inside";
         }
 
         else {
-            this.temperature = input.getIntInputFreetext("What was the temperature?");
-            this.weather = input.getStringInputFreetext("What was the weather?");
+            this.temperature = input.getIntInput("What was the temperature?");
+            this.weather = input.getStringInput("What was the weather?");
             this.exLocation = "outside";
         }
 
@@ -78,7 +76,7 @@ public class Result {
         }
 
         else {
-            int value = input.getIntInputFreetext("Did you have a warmup? 1 = YES, 2 = NO");
+            int value = input.getIntInput("Did you have a warmup? 1 = YES, 2 = NO");
             this.warmup =  (value == 1 ? true : false);
             this.exType = "bodybuilding";
         }
@@ -86,7 +84,7 @@ public class Result {
 
     private void setExName(){
 
-        this.exName = input.getStringInputFreetext("Name your exercise:");
+        this.exName = input.getStringInput("Name your exercise:");
 
     }
 
@@ -110,13 +108,13 @@ public class Result {
 
     private void setReps(){
 
-        this.reps = input.getIntInputFreetext("How many reps did you do?");
+        this.reps = input.getIntInput("How many reps did you do?");
 
     }
 
     private void setSets(){
 
-        this.sets = input.getIntInputFreetext("How many sets did you do?");
+        this.sets = input.getIntInput("How many sets did you do?");
 
     }
 

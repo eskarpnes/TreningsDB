@@ -102,7 +102,7 @@ public class Result {
 
     private void setWorkload(){
 
-        this.workload = input.getIntInput("workload", (this.exType.equals("bodybuilding") ? " in kg" : " in km"));
+        this.workload = input.getIntInput("Enter workload " + (this.exType.equals("bodybuilding") ? " in kg" : " in km"));
 
     }
 

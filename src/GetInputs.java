@@ -1,12 +1,9 @@
 import java.util.Scanner;
 
-/**
- * Created by tsm121 on 13/03/2017.
- */
+
 public class GetInputs {
 
     public String getStringInput(String type, String info ){
-
 
         Scanner input = new Scanner(System.in);
         System.out.println("Your " + type + info + ": ");
@@ -19,7 +16,6 @@ public class GetInputs {
 
     public Integer getIntInput(String type, String info ){
 
-
         Scanner input = new Scanner(System.in);
         System.out.println("Your " + type + info + ": ");
         System.out.print(">>> ");
@@ -31,7 +27,6 @@ public class GetInputs {
 
     public String getStringInput(String type ){
 
-
         Scanner input = new Scanner(System.in);
         System.out.println("Your " + type + ": ");
         System.out.print(">>> ");
@@ -42,7 +37,6 @@ public class GetInputs {
     }
 
     public Integer getIntInput(String type ){
-
 
         Scanner input = new Scanner(System.in);
         System.out.println("Your " + type + ": ");

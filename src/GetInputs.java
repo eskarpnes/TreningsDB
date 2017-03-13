@@ -23,7 +23,7 @@ public class GetInputs {
         Scanner input = new Scanner(System.in);
         System.out.println("Your " + type + info + ": ");
         System.out.print(">>> ");
-        int value = Integer.parseInt(input.nextLine());
+        int value = input.nextInt();
         input.close();
         return value;
 
@@ -47,7 +47,7 @@ public class GetInputs {
         Scanner input = new Scanner(System.in);
         System.out.println("Your " + type + ": ");
         System.out.print(">>> ");
-        int value = Integer.parseInt(input.nextLine());
+        int value = input.nextInt();
         input.close();
         return value;
 

@@ -13,7 +13,6 @@ public class Result extends GetInputs {
     public Result(){
 
         setDescription();
-        System.out.println(this.description);
         setGoal();
 
     }

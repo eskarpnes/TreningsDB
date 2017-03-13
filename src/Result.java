@@ -49,13 +49,9 @@ public class Result {
 
     private void setCategory(){
 
-        System.out.println("Where did you do your workout? 1 = inside, 2 = outside");
-        System.out.println(">>> ");
-        int locInt = input.getIntInput("");
-
-        System.out.println("What kind of exercise you do? 1 = cardio, 2 = bodybuilding" );
-        System.out.println(">>> ");
-        int typeInt = input.getIntInput("");
+        int locInt = input.getIntInput("Where did you do your workout? 1 = inside, 2 = outside");
+        
+        int typeInt = input.getIntInput("What kind of exercise you do? 1 = cardio, 2 = bodybuilding");
 
         if (locInt == 1) {
             this.air_quality = input.getIntInput("How was the air quality? [1-10]");

@@ -7,28 +7,23 @@ import java.util.Scanner;
 public class Result {
 
     private GetInputs input = new GetInputs();
+    private WorkoutData workoutData = null;
 
-    public String exType = "";
-    public String exLocation = "";
-    public String exName = "";
-    public String description;
-    public String goal;
-    public int workload;
-    public int reps;
-    public int sets;
+    private String exType = "";
+    private String exLocation = "";
+    private String exName = "";
+    private String description;
+    private String goal;
+    private int workload;
+    private int reps;
+    private int sets;
 
     //Category info
-    public int air_quality;
-    public int spectators;
-    public int temperature;
-    public String weather;
-    public boolean warmup;
-
-    public static void main(String[] args) {
-
-        System.out.println(new Result());
-
-    }
+    private int air_quality;
+    private int spectators;
+    private int temperature;
+    private String weather;
+    private boolean warmup;
 
     public Result(){
 
@@ -39,18 +34,30 @@ public class Result {
         setReps();
         setSets();
 
+        addWorkoutData();
+
+    }
+
+    private void addWorkoutData() {
+
+        int value = input.getIntInputFreetext("Do you want do add workout data? 1 = YES, 2 = NO");
+
+        if (value == 1){
+
+            this.workoutData = new WorkoutData();
+        }
+
     }
 
     private void setCategory(){
 
-        Scanner in = new Scanner(System.in);
         System.out.println("Where did you do your workout? 1 = inside, 2 = outside");
         System.out.println(">>> ");
-        int locInt = in.nextInt();
+        int locInt = input.getIntInputFreetext("");
 
         System.out.println("What kind of exercise you do? 1 = cardio, 2 = bodybuilding" );
         System.out.println(">>> ");
-        int typeInt = in.nextInt();
+        int typeInt = input.getIntInputFreetext("");
 
         if (locInt == 1) {
             this.air_quality = input.getIntInputFreetext("How was the air quality? [1-10]");
@@ -75,7 +82,6 @@ public class Result {
             this.warmup =  (value == 1 ? true : false);
             this.exType = "bodybuilding";
         }
-
     }
 
     private void setExName(){
@@ -114,10 +120,6 @@ public class Result {
 
     }
 
-    public GetInputs getInput() {
-        return input;
-    }
-
     public String getExType() {
         return exType;
     }
@@ -150,6 +152,10 @@ public class Result {
         return sets;
     }
 
+    public WorkoutData getWorkoutData(){
+        return this.workoutData;
+    }
+
     @Override
     public String toString() {
 
@@ -164,5 +170,3 @@ public class Result {
 
     }
 }
-
-

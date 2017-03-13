@@ -5,14 +5,14 @@ public class Result extends GetInputs {
     public String description;
 
     public static void main(String[] args) {
-        Result rs = new Result();
 
+        new Result();
 
     }
 
     public Result(){
+
         setDescription();
-        System.out.println(this.description);
         setGoal();
 
     }
@@ -26,10 +26,8 @@ public class Result extends GetInputs {
     private void setGoal(){
 
         this.goal = getStringInput("goal");
+
     }
-
-
-
 }
 
 

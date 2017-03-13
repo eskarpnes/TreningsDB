@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Created by Thomas on 13.03.2017.
+ */
 
 public class GetInputs {
 

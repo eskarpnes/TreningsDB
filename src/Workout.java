@@ -37,7 +37,7 @@ public class Workout {
     public void getUserInput() {
         this.duration = input.getIntInput("duration", "in minutes");
         this.shape = input.getIntInput("shape", "from 1-10");
-        this.performance = input.getIntInput("perfomance", "from 1-10");
+        this.performance = input.getIntInput("performance", "from 1-10");
     }
 
 }

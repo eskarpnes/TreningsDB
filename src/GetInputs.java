@@ -8,49 +8,7 @@ public class GetInputs {
 
     Scanner input;
 
-    public String getStringInput(String type, String info ){
-
-        this.input = new Scanner(System.in);
-        System.out.println("Your " + type + info + ": ");
-        System.out.print(">>> ");
-        String value = "";
-        if (this.input.hasNextLine()) {
-            value = this.input.nextLine();
-        }
-
-        return value;
-
-    }
-
-    public Integer getIntInput(String type, String info ){
-
-        this.input = new Scanner(System.in);
-        System.out.println("Your " + type + info + ": ");
-        System.out.print(">>> ");
-        int value = -1;
-        if (this.input.hasNextLine()) {
-            value = this.input.nextInt();
-        }
-
-        return value;
-
-    }
-
-    public String getStringInput(String type ){
-
-        this.input = new Scanner(System.in);
-        System.out.println("Your " + type + ": ");
-        System.out.print(">>> ");
-        String value = "";
-        if (this.input.hasNextLine()) {
-            value = this.input.nextLine();
-        }
-
-        return value;
-
-    }
-
-    public String getStringInputFreetext(String text ){
+    public String getStringInput(String text ){
 
         this.input = new Scanner(System.in);
         System.out.println(text);
@@ -61,23 +19,9 @@ public class GetInputs {
         }
 
         return value;
-
     }
 
-    public Integer getIntInput(String type ){
-
-        this.input = new Scanner(System.in);
-        System.out.println("Your " + type + ": ");
-        System.out.print(">>> ");
-        int value = -1;
-        if (this.input.hasNextLine()) {
-            value = this.input.nextInt();
-        }
-
-        return value;
-    }
-
-    public Integer getIntInputFreetext(String text ){
+    public Integer getIntInput(String text ){
 
         this.input = new Scanner(System.in);
         System.out.println(text);

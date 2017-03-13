@@ -26,7 +26,7 @@ public class Main {
             System.out.println("");
             System.out.println("Which function do you want to use?");
             System.out.println("Input workout | Best workout | Statistics");
-            input = in.getStringInputFreetext("");
+            input = in.getStringInput("");
             if (input.trim().toLowerCase().equals("input workout")) {
                 inputWorkout();
             } else if (input.trim().toLowerCase().equals("best workout")) {
@@ -44,13 +44,13 @@ public class Main {
     public void inputWorkout() {
         String input;
         Workout workout = new Workout();
-        input = in.getStringInputFreetext("Do you want to add a note?");
+        input = in.getStringInput("Do you want to add a note?");
         if (input.toLowerCase().equals("yes")||input.toLowerCase().equals("y")) {
            workout.addNote();
         }
-        int num = in.getIntInputFreetext("How many exercises did you do?");
+        int num = in.getIntInput("How many exercises did you do?");
         for (int i = 0; i<num; i++) {
-            System.out.println("Inputting exercise number " + i+1);
+            System.out.println("Inputting exercise number " + Integer.toString(i+1));
             workout.addResult();
         }
     }

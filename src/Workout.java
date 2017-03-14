@@ -56,4 +56,15 @@ public class Workout {
         this.performance = input.getIntInput("Input performance from 1-10");
     }
 
+    public int getTotal() {
+        int total = 0;
+        for (Result result : results) {
+            int load = result.getWorkload();
+            int sets = result.getSets();
+            int reps = result.getReps();
+            total += load*sets*reps;
+        }
+        return total;
+    }
+
 }

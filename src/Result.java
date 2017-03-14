@@ -73,7 +73,7 @@ public class Result {
 
         else {
             int value = input.getIntInput("Did you have a warmup? 1 = YES, 2 = NO");
-            this.warmup =  (value == 1 ? true : false);
+            this.warmup =  (value == 1);
             this.exType = "bodybuilding";
         }
     }

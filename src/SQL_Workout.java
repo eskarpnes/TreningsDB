@@ -22,7 +22,7 @@ public class SQL_Workout implements SQL {
     }
     
     @Override
-    public String fetch() {
+    public void fetch() {
         try {
             state = this.db.conn.createStatement();
             String sql = "select workout_no, " +
@@ -43,7 +43,6 @@ public class SQL_Workout implements SQL {
         } finally {
             this.db.close();
         }
-        return "";
     }
 
     @Override

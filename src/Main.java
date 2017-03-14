@@ -10,6 +10,9 @@ public class Main {
         db = new LoadDatabase();
         SQL_Workout w = new SQL_Workout(db);
         w.fetch();
+        for (Workout x:w.getWorkouts()){
+            System.out.println(x.wo_time);
+        }
 //        getUserFunction();
     }
 
@@ -45,7 +48,7 @@ public class Main {
         int num = in.getIntInput("How many exercises did you do?");
         for (int i = 0; i<num; i++) {
             System.out.println("Inputting exercise number " + Integer.toString(i+1));
-            workout.addResult();
+//            workout.addResult();
         }
     }
 

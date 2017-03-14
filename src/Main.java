@@ -5,18 +5,12 @@
 public class Main {
 
     GetInputs in;
-
+    LoadDatabase db = null;
     public Main() {
-        init();
-        run();
-    }
-
-    public void init() {
-        //stuff
-    }
-
-    public void run() {
-        getUserFunction();
+        db = new LoadDatabase();
+        SQL_Workout w = new SQL_Workout(db);
+        w.fetch();
+//        getUserFunction();
     }
 
     public void getUserFunction() {

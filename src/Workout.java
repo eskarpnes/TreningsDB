@@ -14,6 +14,8 @@ public class Workout {
     int shape;
     int performance;
 
+
+
     public Workout () {
         this.wo_date = getDate();
         getUserInput();

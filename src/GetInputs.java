@@ -5,7 +5,6 @@ import java.util.Scanner;
  */
 
 public class GetInputs {
-
     Scanner input;
 
     public String getStringInput(String text ){

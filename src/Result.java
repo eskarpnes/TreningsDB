@@ -32,7 +32,7 @@ public class Result {
         setReps();
         setSets();
 
-        addWorkoutData();
+        //addWorkoutData();
 
     }
 
@@ -65,17 +65,17 @@ public class Result {
             this.exLocation = "outside";
         }
 
-        setWorkload();
-
         if (typeInt == 1) {
             this.exType = "cardio";
         }
 
         else {
-            int value = input.getIntInput("Did you have a warmup? 1 = YES, 2 = NO");
-            this.warmup =  (value == 1);
+            String value = input.getStringInput("Did you have a warmup?");
+            this.warmup =  (value.trim().toLowerCase().equals("yes")||value.trim().toLowerCase().equals("y"));
             this.exType = "bodybuilding";
         }
+
+        setWorkload();
     }
 
     private void setExName(){
@@ -86,26 +86,22 @@ public class Result {
 
     private void setDescription() {
 
-        this.description = input.getStringInput("description");
+        this.description = input.getStringInput("description:");
 
     }
 
     private void setGoal(){
 
-        this.goal = input.getStringInput("goal");
+        this.goal = input.getStringInput("goal:");
 
     }
 
     private void setWorkload(){
-
-        this.workload = input.getIntInput("Enter workload " + (this.exType.equals("bodybuilding") ? " in kg" : " in km"));
-
+        this.workload = input.getIntInput("Enter workload " + (this.exType.equals("bodybuilding") ? "in kg" : "in km"));
     }
 
     private void setReps(){
-
         this.reps = input.getIntInput("How many reps did you do?");
-
     }
 
     private void setSets(){

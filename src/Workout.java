@@ -10,6 +10,7 @@ public class Workout {
     GetInputs input = new GetInputs();
     Note note;
     String wo_date;
+    String timestamp;
     int duration;
     int shape;
     int performance;

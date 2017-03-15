@@ -1,14 +1,16 @@
+import java.util.ArrayList;
+
 /**
  * Created by Erlend on 13.03.2017.
  */
 
 public class Workout {
 
-//    ArrayList<Result> results = new ArrayList<Result>();
+    ArrayList<Result> results = new ArrayList<Result>();
     Tool tool = new Tool();
     Note note;
     String wo_date, wo_time;
-    int wo_num, duration, shape, performance;
+    int wo_num, duration, shape, performance, id;
 
 
     public Workout () {
@@ -29,25 +31,38 @@ public class Workout {
         this.note = new Note();
     }
 
-//    public void addResult() {
-////        results.add(new Result());
-////    }
+    public void addResult() {
+        results.add(new Result());
+    }
+
+    public void addResults(ArrayList<Result> results) {
+        this.results.addAll(results);
+    }
 
     public void getUserInput() {
-        this.duration = tool.getIntInput("Input duration in minutes");
+        this.duration = tool.getIntInput("Input duration tool minutes");
         this.shape = tool.getIntInput("Input shape from 1-10");
         this.performance = tool.getIntInput("Input performance from 1-10");
     }
 
-//    public int getTotal() {
-//        int total = 0;
-//        for (Result result : results) {
-//            int load = result.getWorkload();
-//            int sets = result.getSets();
-//            int reps = result.getReps();
-//            total += load*sets*reps;
-//        }
-//        return total;
-//    }
+    public int getTotal() {
+        int total = 0;
+        for (Result result : results) {
+            int load = result.getWorkload();
+            int sets = result.getSets();
+            int reps = result.getReps();
+            total += load*sets*reps;
+        }
+        return total;
+    }
 
+    @Override
+    public String toString() {
+        return "Workout{" +
+                "wo_date='" + wo_date + '\'' +
+                ", wo_time='" + wo_time + '\'' +
+                ", wo_num=" + wo_num +
+                ", duration=" + duration +
+                '}';
+    }
 }

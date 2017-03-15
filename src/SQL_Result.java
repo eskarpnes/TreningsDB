@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by mariasoleim on 15.03.2017.
  */
 
-public class SQL_Result implements SQL {
+public class SQL_Result {
 
     LoadDatabase db;
     ResultSet result = null;
@@ -21,11 +21,11 @@ public class SQL_Result implements SQL {
         this.state = db.state;
     }
 
-    @Override
-    public void fetch() {
+    public void fetch(int workout_id) {
         try {
             state = this.db.conn.createStatement();
-            String sql = "select id, description, goal, workload, reps, sets, workout_no from workout";
+            String sql = "select id, description, goal, workload, reps, sets, workout_no " +
+                    "from result where workout_no = " + workout_id;
             result = state.executeQuery(sql);
             while (result.next()) {
                 String _description = result.getString("description");
@@ -42,7 +42,6 @@ public class SQL_Result implements SQL {
         }
     }
 
-    @Override
     public void insert(String s) {
         try {
             state = this.db.conn.createStatement();

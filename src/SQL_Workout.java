@@ -5,7 +5,7 @@
 import java.sql.*;
 import java.util.ArrayList;
 
-public class SQL_Workout implements SQL {
+public class SQL_Workout {
     LoadDatabase db;
     ResultSet result = null;
     Statement state = null;
@@ -22,13 +22,13 @@ public class SQL_Workout implements SQL {
         return this.workouts;
     }
     
-    @Override
-    public void fetch() {
+
+    public void fetch(int id) {
         try {
             state = this.db.conn.createStatement();
             String sql = "select workout_no, " +
                     "workout_date, workout_time, " +
-                    "duration, shape, performance from workout";
+                    "duration, shape, performance from workout where workout_no = " + id;
             result = state.executeQuery(sql);
             while (result.next()) {
                 int _num = result.getInt("workout_no");
@@ -46,7 +46,6 @@ public class SQL_Workout implements SQL {
         }
     }
 
-    @Override
     public void insert(String s) {
         try {
             state = this.db.conn.createStatement();

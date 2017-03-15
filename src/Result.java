@@ -36,6 +36,14 @@ public class Result {
 
     }
 
+    public Result(String description, String goal, int workload, int reps, int sets) {
+        this.description = description;
+        this.goal = goal;
+        this.workload = workload;
+        this.reps = reps;
+        this.sets = sets;
+    }
+
     private void addWorkoutData() {
 
         int value = input.getIntInput("Do you want do add workout data? 1 = YES, 2 = NO");

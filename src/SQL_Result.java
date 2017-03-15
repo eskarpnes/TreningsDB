@@ -1,20 +1,21 @@
-/**
- * Created by Torleif on 14.03.17.
- */
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class SQL_Note implements SQL {
+/**
+ * Created by mariasoleim on 15.03.2017.
+ */
+
+public class SQL_Result implements SQL {
+
     LoadDatabase db;
     ResultSet result = null;
     Statement state = null;
-    ArrayList<Note> notes;
+    ArrayList<Result> results;
 
-    SQL_Note(LoadDatabase db){
-        this.notes = new ArrayList<>();
+    SQL_Result(LoadDatabase db){
+        this.results = new ArrayList<>();
         this.db = db;
         this.result = db.result;
         this.state = db.state;
@@ -24,14 +25,15 @@ public class SQL_Note implements SQL {
     public void fetch() {
         try {
             state = this.db.conn.createStatement();
-            String sql = "select workout_no, " +
-                    "workout_date, workout_time, " +
-                    "duration, shape, performance from workout";
+            String sql = "select id, description, goal, workload, reps, sets, workout_no from workout";
             result = state.executeQuery(sql);
             while (result.next()) {
-                String _purpose = result.getString("purpose");
-                String _tips = result.getString("tips");
-                this.notes.add(new Note(_purpose, _tips));
+                String _description = result.getString("description");
+                String _goal = result.getString("goal");
+                int _workload = result.getInt("workload");
+                int _reps = result.getInt("reps");
+                int _sets = result.getInt("sets");
+                this.results.add(new Result(_description, _goal, _workload, _reps, _sets));
             }
         } catch (SQLException ex) {
             this.db.SQLEx(ex);
@@ -44,7 +46,7 @@ public class SQL_Note implements SQL {
     public void insert(String s) {
         try {
             state = this.db.conn.createStatement();
-            String sql = "INSERT INTO note VALUES " + s; // s = "(purpose, tips)"
+            String sql = "INSERT INTO result VALUES " + s; // s = "(1, 15.03.2017, 15.15, 45, null, null)"
             result = state.executeQuery(sql);
         } catch (SQLException ex) {
             this.db.SQLEx(ex);

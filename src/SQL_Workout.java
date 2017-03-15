@@ -1,6 +1,7 @@
 /**
  * Created by tollef on 14.03.17.
  */
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -47,5 +48,14 @@ public class SQL_Workout implements SQL {
 
     @Override
     public void insert(String s) {
+        try {
+            state = this.db.conn.createStatement();
+            String sql = "INSERT INTO workout VALUES " + s; // s = "(1, 15.03.2017, 15.15, 45, null, null)"
+            result = state.executeQuery(sql);
+        } catch (SQLException ex) {
+            this.db.SQLEx(ex);
+        } finally {
+            this.db.close();
+        }
     }
 }

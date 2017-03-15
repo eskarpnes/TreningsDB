@@ -4,7 +4,7 @@
 
 public class Result {
 
-    private GetInputs input = new GetInputs();
+    private Tool input = new Tool();
     private WorkoutData workoutData = null;
 
     private String exType = "";

@@ -3,7 +3,7 @@
  */
 public class Note {
 
-    GetInputs in = new GetInputs();
+    Tool in = new Tool();
 
     private String purpose, tips;
 

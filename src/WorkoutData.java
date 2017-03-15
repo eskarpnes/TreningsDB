@@ -3,7 +3,7 @@
  */
 public class WorkoutData {
 
-    private GetInputs input = new GetInputs();
+    private Tool input = new Tool();
 
     private String time;
     private int heartRate;

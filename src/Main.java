@@ -1,4 +1,3 @@
-import java.text.DateFormat;
 import java.util.Date;
 
 /**
@@ -6,7 +5,7 @@ import java.util.Date;
  */
 public class Main {
 
-    GetInputs in;
+    Tool in;
     LoadDatabase db = null;
     public Main() {
         db = new LoadDatabase();
@@ -19,21 +18,21 @@ public class Main {
     }
 
     public void getUserFunction() {
-        this.in = new GetInputs();
+        this.in = new Tool();
         String input = "";
         while (!input.equals("quit")) {
             System.out.println("");
             System.out.println("Which function do you want to use?");
             System.out.println("Input workout | Best workout | Statistics");
             input = in.getStringInput("");
-            if (input.trim().toLowerCase().equals("input workout")) {
+            if (input.trim().toLowerCase().equals("tool workout")) {
                 inputWorkout();
             } else if (input.trim().toLowerCase().equals("best workout")) {
                 bestWorkout();
             } else if (input.trim().toLowerCase().equals("statistics")) {
                 statistics();
             } else if (!input.equals("quit")){
-                System.out.println("Not a valid input");
+                System.out.println("Not a valid tool");
             }
         }
         in.closeScanner();

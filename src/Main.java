@@ -1,3 +1,5 @@
+import java.text.DateFormat;
+import java.util.Date;
 
 /**
  * Created by Erlend on 13.03.2017.
@@ -55,6 +57,9 @@ public class Main {
     //Gets the best workout in the last 7 days
     public void bestWorkout() {
         System.out.println("Calculating the best workout");
+        //Get all workouts from the last 7 days.
+        SQL_Workout sqlwo = new SQL_Workout(db);
+        Date df = new Date();
     }
 
     //Gets statistics from the database
